@@ -32,7 +32,9 @@ app.get('/about', function (req, res) {
     res.render('pages/about', {});
 });
 
+var port = process.env.PORT || 3000;
+
 //Start Server 
-app.listen(8032, function () {
+app.listen(port, function () {
     console.log("Server running on port 8032");
 });
