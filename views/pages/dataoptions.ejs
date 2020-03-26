@@ -23,12 +23,23 @@
 
                 <div style="margin-bottom:<%= marginBottom %>">
                     <h2>General</h2>
+                    <div class="col-sm-12 checkboxes">
+                        <div>
+                            <label class="filtercontainer" onclick="selectAllGeneral()">
+                                <input type="checkbox" class="" id="checkboxgeneralall">
+                                <span class="checkmark"></span>
+                                <p>
+                                    Select all
+                                </p>
+                            </label>
+                        </div>
+                    </div>
 
                     <div class="col-sm-6 checkboxes">
                         <% for (var i = 0; i < optionsGeneral.length/2; i++) { %>
                         <div>
                             <label class="filtercontainer">
-                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
+                                <input type="checkbox" class="checkbox checkboxgeneral" id="<%= optionsGeneral[i] %>" onclick="checkIfOptionsSelected()">
                                 <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
@@ -42,7 +53,7 @@
                         <% for (var i = Math.ceil(optionsGeneral.length/2); i < optionsGeneral.length; i++) { %>
                         <div>
                             <label class="filtercontainer">
-                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
+                                <input type="checkbox" class="checkbox checkboxgeneral" id="<%= optionsGeneral[i] %>" onclick="checkIfOptionsSelected()">
                                 <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
@@ -54,12 +65,23 @@
                 </div>
 
                 <h2>Content</h2>
+                <div class="col-sm-12 checkboxes">
+                    <div>
+                        <label class="filtercontainer" onclick="selectAllContent();checkIfOptionsSelected()">
+                            <input type="checkbox" class="" id="checkboxcontentall">
+                            <span class="checkmark"></span>
+                            <p>
+                                Select all
+                            </p>
+                        </label>
+                    </div>
+                </div>
 
                 <div class="col-sm-6 checkboxes">
                     <% for (var i = 0; i < optionsContent.length/2; i++) { %>
                     <div>
                         <label class="filtercontainer">
-                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
+                            <input type="checkbox" class="checkbox checkboxcontent" id="<%= optionsContent[i] %>" onclick="checkIfOptionsSelected()">
                             <span class="checkmark"></span>
                             <p>
                                 <%= optionsContent[i] %>
@@ -73,7 +95,7 @@
                     <% for (var i = Math.ceil(optionsContent.length/2); i < optionsContent.length; i++) { %>
                     <div>
                         <label class="filtercontainer">
-                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
+                            <input type="checkbox" class="checkbox checkboxcontent" id="<%= optionsContent[i] %>" onclick="checkIfOptionsSelected()">
                             <span class="checkmark"></span>
                             <p>
                                 <%= optionsContent[i] %>
@@ -87,7 +109,7 @@
 
             <div class="row">
                 <div class="col-sm comparebtn">
-                    <button class="btn btn-primary" onClick="goToComparePage()">Continue</button>
+                    <button class="btn btn-primary" id="continuebutton" onClick="goToComparePage()" disabled>Continue</button>
                 </div>
             </div>
         </div>

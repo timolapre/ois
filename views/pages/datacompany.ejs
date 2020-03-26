@@ -23,7 +23,7 @@
                     <% for (var i = 0; i < companies.length/2; i++) { %>
                     <div>
                         <label class="filtercontainer">
-                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>">
+                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>" onclick="checkIfCompaniesSelected()">
                             <span class="checkmark"></span>
                             <p>
                                 <%= companies[i] %>
@@ -37,7 +37,7 @@
                     <% for (var i = Math.ceil(companies.length/2); i < companies.length; i++) { %>
                     <div>
                         <label class="filtercontainer">
-                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>">
+                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>" onclick="checkIfCompaniesSelected()">
                             <span class="checkmark"></span>
                             <p>
                                 <%= companies[i] %>
@@ -50,7 +50,7 @@
 
             <div class="row">
                 <div class="col-sm comparebtn">
-                    <button class="btn btn-primary" onClick="goToOptionsPage()">Continue</button>
+                    <button class="btn btn-primary" onClick="goToOptionsPage()" id="continuebutton" disabled>Continue</button>
                 </div>
             </div>
         </div>

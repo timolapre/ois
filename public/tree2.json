@@ -20,28 +20,28 @@
                             {
                                 "dataname": "First name",
                                 "FacebookName": "first_name",
-                                "FacebookOptions": "string with characters of any length",
+                                "FacebookOptions": "String with characters of any length",
                                 "FacebookInfo": "The first name of the user",
                                 "GoogleName": "givenName",
-                                "GoogleOptions": "string with characters of any length",
+                                "GoogleOptions": "String with characters of any length",
                                 "GoogleInfo": "The first name of the user"
                             },
                             {
                                 "dataname": "Last name",
                                 "FacebookName": "last_name",
-                                "FacebookOptions": "string with characters of any length",
+                                "FacebookOptions": "String with characters of any length",
                                 "FacebookInfo": "The last name of the user",
                                 "GoogleName": "familyName",
-                                "GoogleOptions": "string with characters of any length",
+                                "GoogleOptions": "String with characters of any length",
                                 "GoogleInfo": "The last name of the user"
                             },
                             {
                                 "dataname": "Full name",
                                 "FacebookName": "full_name",
-                                "FacebookOptions": "string with characters of any length",
+                                "FacebookOptions": "String with characters of any length",
                                 "FacebookInfo": "The full name of the user",
                                 "GoogleName": "formattedName",
-                                "GoogleOptions": "string with characters of any length",
+                                "GoogleOptions": "String with characters of any length",
                                 "GoogleInfo": "The full name of the user"
                             }
                         ]
@@ -49,10 +49,10 @@
                     {
                         "dataname": "E-mails",
                         "FacebookName": "emails > [emails]",
-                        "FacebookOptions": "array with any amount of email strings",
+                        "FacebookOptions": "Array with any amount of email strings",
                         "FacebookInfo": "The emails of the user",
                         "GoogleName": "emails > [{value}]",
-                        "GoogleOptions": "array with any amount of json with email strings",
+                        "GoogleOptions": "Array with any amount of json with email strings",
                         "GoogleInfo": "The emails of the user"
                     }
                 ]
