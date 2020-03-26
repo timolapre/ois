@@ -1,3 +1,7 @@
+body{
+    font-family: 'Calibri';
+}
+
 .icon{
     cursor: pointer;
 }
@@ -51,7 +55,7 @@
 }
 
 .lastnode{
-    border-bottom: rgb(150, 150, 150) 2px solid;
+    border-bottom: #337AB7 4px solid;
 }
 
 
@@ -65,20 +69,23 @@
     padding: 5px;
 }
 
-
-
 /* Customize the label (the container) */
 .filtercontainer {
     display: block;
     position: relative;
-    padding-left: 0px;
-    margin: 12px;
+    padding: 12px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .filtercontainer p{
+      display: inline;
   }
   
   /* Hide the browser's default checkbox */
@@ -92,13 +99,12 @@
   
   /* Create a custom checkbox */
   .checkmark {
-    position: absolute;
     top: 0;
-    margin-left: 130px;
     height: 30px;
     width: 30px;
     background-color: #ccc;
     border-radius: 10px;
+    float: right;
   }
   
   /* On mouse-over, add a grey background color */
@@ -110,12 +116,17 @@
   .filtercontainer input:checked ~ .checkmark {
     background-color: #337AB7;
   }
+
+  /* When the checkbox is checked, add a blue background */
+  .filtercontainer input:checked ~ p {
+    font-weight: bold;
+  }
   
   /* Create the checkmark/indicator (hidden when not checked) */
   .checkmark:after {
     content: "";
-    position: absolute;
     display: none;
+    float: right;
   }
   
   /* Show the checkmark when checked */
@@ -123,12 +134,16 @@
     display: block;
   }
   
+  .checkmark{
+      padding: 7px 11px;
+  }
+
   /* Style the checkmark/indicator */
   .filtercontainer .checkmark:after {
     left: 12px;
     top: 8px;
-    width: 5px;
-    height: 10px;
+    width: 8px;
+    height: 14px;
     border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
@@ -138,4 +153,16 @@
 
 .col-sm-6{
     margin-top: 10px;
+}
+
+.treeview{
+    font-size: 18px;
+}
+
+.treeview p{
+    margin-bottom: 10px;
+}
+
+.tabledata{
+    margin-top: 30px;
 }

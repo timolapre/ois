@@ -28,11 +28,11 @@
                         <% for (var i = 0; i < optionsGeneral.length/2; i++) { %>
                         <div>
                             <label class="filtercontainer">
+                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
+                                <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
                                 </p>
-                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
-                                <span class="checkmark"></span>
                             </label>
                         </div>
                         <% } %>
@@ -42,11 +42,11 @@
                         <% for (var i = Math.ceil(optionsGeneral.length/2); i < optionsGeneral.length; i++) { %>
                         <div>
                             <label class="filtercontainer">
+                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
+                                <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
                                 </p>
-                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
-                                <span class="checkmark"></span>
                             </label>
                         </div>
                         <% } %>
@@ -59,11 +59,11 @@
                     <% for (var i = 0; i < optionsContent.length/2; i++) { %>
                     <div>
                         <label class="filtercontainer">
+                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
+                            <span class="checkmark"></span>
                             <p>
                                 <%= optionsContent[i] %>
                             </p>
-                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
-                            <span class="checkmark"></span>
                         </label>
                     </div>
                     <% } %>
@@ -73,11 +73,11 @@
                     <% for (var i = Math.ceil(optionsContent.length/2); i < optionsContent.length; i++) { %>
                     <div>
                         <label class="filtercontainer">
+                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
+                            <span class="checkmark"></span>
                             <p>
                                 <%= optionsContent[i] %>
                             </p>
-                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
-                            <span class="checkmark"></span>
                         </label>
                     </div>
                     <% } %>

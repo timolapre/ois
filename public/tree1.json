@@ -4,36 +4,36 @@
         "nodes": [
             {
                 "dataname": "Languages",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
+
+                "FacebookOptions": "English",
+
+                "GoogleOptions": "English",
+
+                "InstagramOptions": "English",
+
+                "LinkedinOptions": "-"
             },
             {
                 "dataname": "Formats",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
+                
+                "FacebookOptions": "HTML / JSON",
+
+                "GoogleOptions": "Depends on product",
+
+                "InstagramOptions": "Plain text",
+
+                "LinkedinOptions": "-"
             },
             {
-                "dataname": "Niveaus",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
+                "dataname": "Quality",
+
+                "FacebookOptions": "High / Medium / Low",
+
+                "GoogleOptions": "No options",
+
+                "InstagramOptions": "No options",
+
+                "LinkedinOptions": "-"
             }
         ]
     }

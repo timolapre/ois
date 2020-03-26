@@ -151,6 +151,8 @@
 		this.tree = [];
 		this.nodes = [];
 
+		this.treeid = options.id;
+
 		if (options.data) {
 			if (typeof options.data === 'string') {
 				options.data = $.parseJSON(options.data);
@@ -482,7 +484,7 @@
 		}
 	};
 
-	Tree.prototype.render = function () {
+	Tree.prototype.render = function (options) {
 
 		if (!this.initialized) {
 
@@ -498,12 +500,12 @@
 		this.$element.empty().append(this.$wrapper.empty());
 
 		// Build tree
-		this.buildTree(this.tree, 0);
+		this.buildTree(this.tree, 0, options);
 	};
 
 	// Starting from the root node, and recursing down the
 	// structure we build the tree one node at a time
-	Tree.prototype.buildTree = function (nodes, level) {
+	Tree.prototype.buildTree = function (nodes, level, treeid) {
 
 		if (!nodes) return;
 		level += 1;
@@ -613,17 +615,37 @@
 					return;
 				}
 
+				if (_this.treeid == 1) {
+					var infoOptions = ["Options"];
+				} else {
+					var infoOptions = ["Name", "Options", "Info"];
+				}
+
 				treeItem.append(node.dataname);
 
-				var text = '<div class="row">' +
-					'<div class="col-sm-' + colsm1 + '">' +
-					'</div>';
+				var text = '<div class="row tabledata">' +
+					'<div class="col-sm-' + colsm1 + '">';
 
-				for (i = 0; i < companies.length; i++) {
-					text += '<div class="col-sm-' + colsm + '">' +
-						'<p>' + getName(node, i + 1, companies[i]) + '</p>' +
-						'<p>' + getInfo(node, i + 1, companies[i]) + '</p>' +
-						'</div>';
+				for (var j = 0; j < infoOptions.length; j++) {
+					if (!node.nodes) {
+						text += '<p>' + infoOptions[j] + '</p>';
+					}
+				}
+
+				text += '</div>';
+
+				for (var i = 0; i < companies.length; i++) {
+					text += '<div class="col-sm-' + colsm + '">';
+
+					for (var j = 0; j < infoOptions.length; j++) {
+						if (node[companies[i] + infoOptions[j]]) {
+							text += '<p>' + node[companies[i] + infoOptions[j]] + '</p>';
+						} else if (!node.nodes) {
+							text += '<p>-</p>';
+						}
+					}
+
+					text += '</div>';
 				}
 
 				text += '</div>';
@@ -651,22 +673,6 @@
 			}
 		});
 	};
-
-	function getName(node, id, company) {
-		if (node[company+"Name"]) {
-			return "Name: " + node[company+"Name"];
-		} else {
-			return "";
-		}
-	}
-
-	function getInfo(node, id, company) {
-		if (node[company+"Info"]) {
-			return "Info: " + node[company+"Info"];
-		} else {
-			return "";
-		}
-	}
 
 	// Define any node level style override for
 	// 1. selectedNode

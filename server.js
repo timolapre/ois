@@ -4,8 +4,8 @@ var dotenv = require('dotenv').config({ path: 'config.env' })
 var app = express();
 
 var companies = ["Facebook", "Google", "Instagram", "Linkedin", "Tiktok", "Snapchat"];
-var optionsGeneral = ["Languages", "Formats", "Niveaus"];
-var optionsContent = ["Gender", "Messages", "Photo's", "Followers"];
+var optionsGeneral = ["Languages", "Formats", "Quality"];
+var optionsContent = ["Profile", "Gender", "Name", "First name", "Last name", "Full name","E-mails"];
 var marginBottom = Math.ceil(optionsGeneral.length/2)*100 +"px";
 
 app.set('view engine', 'ejs');
@@ -36,5 +36,5 @@ var port = process.env.PORT || 3000;
 
 //Start Server 
 app.listen(port, function () {
-    console.log("Server running on port 8032");
+    console.log("Server running on port " + port);
 });

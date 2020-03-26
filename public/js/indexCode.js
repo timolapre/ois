@@ -92,3 +92,7 @@ function getColsm() {
     }
     return [colsm1, colsm];
 }
+
+function search(){
+    console.log("zoeken naar niks want dit werkt nog niet joe");
+}

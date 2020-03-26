@@ -3,113 +3,59 @@
         "dataname": "Content",
         "nodes": [
             {
-                "dataname": "Gender",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
-            },
-            {
-                "dataname": "Messages",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
-            },
-            {
-                "dataname": "Photo's",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
-            },
-            {
-                "dataname": "Followers",
+                "dataname": "Profile",
                 "nodes": [
                     {
-                        "dataname": "Following",
-                        "FacebookName": ".",
-                        "FacebookInfo": ".",
-                        "GoogleName": ".",
-                        "GoogleInfo": ".",
-                        "InstagramName": ".",
-                        "InstagramInfo": ".",
-                        "LinkedinName": ".",
-                        "LinkedinInfo": "."
+                        "dataname": "Gender",
+                        "FacebookName": "gender > gender_option",
+                        "FacebookOptions": "MALE / FEMALE",
+                        "FacebookInfo": "The gender of the user",
+                        "GoogleName": "gender > type",
+                        "GoogleOptions": "male / female",
+                        "GoogleInfo": "The gender of the user"
                     },
                     {
-                        "dataname": "Followers",
-                        "FacebookName": ".",
-                        "FacebookInfo": ".",
-                        "GoogleName": ".",
-                        "GoogleInfo": ".",
-                        "InstagramName": ".",
-                        "InstagramInfo": ".",
-                        "LinkedinName": ".",
-                        "LinkedinInfo": "."
-                    }
-                ]
-            },
-            {
-                "dataname": "Groups",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
-            },
-            {
-                "dataname": "Events",
-                "nodes": [
-                    {
-                        "dataname": "Birthdays",
-                        "FacebookName": ".",
-                        "FacebookInfo": ".",
-                        "GoogleName": ".",
-                        "GoogleInfo": ".",
-                        "InstagramName": ".",
-                        "InstagramInfo": ".",
-                        "LinkedinName": ".",
-                        "LinkedinInfo": "."
+                        "dataname": "Name",
+                        "nodes": [
+                            {
+                                "dataname": "First name",
+                                "FacebookName": "first_name",
+                                "FacebookOptions": "string with characters of any length",
+                                "FacebookInfo": "The first name of the user",
+                                "GoogleName": "givenName",
+                                "GoogleOptions": "string with characters of any length",
+                                "GoogleInfo": "The first name of the user"
+                            },
+                            {
+                                "dataname": "Last name",
+                                "FacebookName": "last_name",
+                                "FacebookOptions": "string with characters of any length",
+                                "FacebookInfo": "The last name of the user",
+                                "GoogleName": "familyName",
+                                "GoogleOptions": "string with characters of any length",
+                                "GoogleInfo": "The last name of the user"
+                            },
+                            {
+                                "dataname": "Full name",
+                                "FacebookName": "full_name",
+                                "FacebookOptions": "string with characters of any length",
+                                "FacebookInfo": "The full name of the user",
+                                "GoogleName": "formattedName",
+                                "GoogleOptions": "string with characters of any length",
+                                "GoogleInfo": "The full name of the user"
+                            }
+                        ]
                     },
                     {
-                        "dataname": "Parties",
-                        "FacebookName": ".",
-                        "FacebookInfo": ".",
-                        "GoogleName": ".",
-                        "GoogleInfo": ".",
-                        "InstagramName": ".",
-                        "InstagramInfo": ".",
-                        "LinkedinName": ".",
-                        "LinkedinInfo": "."
+                        "dataname": "E-mails",
+                        "FacebookName": "emails > [emails]",
+                        "FacebookOptions": "array with any amount of email strings",
+                        "FacebookInfo": "The emails of the user",
+                        "GoogleName": "emails > [{value}]",
+                        "GoogleOptions": "array with any amount of json with email strings",
+                        "GoogleInfo": "The emails of the user"
                     }
                 ]
-            },
-            {
-                "dataname": "Pages",
-                "FacebookName": ".",
-                "FacebookInfo": ".",
-                "GoogleName": ".",
-                "GoogleInfo": ".",
-                "InstagramName": ".",
-                "InstagramInfo": ".",
-                "LinkedinName": ".",
-                "LinkedinInfo": "."
             }
         ]
     }
