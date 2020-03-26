@@ -1,0 +1,595 @@
+<html>
+
+<head>
+    <title>Bootstrap Tree View</title>
+    <link href="./bower_components/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="./css/bootstrap-treeview.css" rel="stylesheet"> -->
+    <style type="text/css" id="treeview1-style">
+        .treeview .list-group-item {
+            cursor: default
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview1:not(.node-disabled):hover {}
+    </style>
+    <style type="text/css" id="treeview2-style">
+        .treeview .list-group-item {
+            cursor: default
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview2 {}
+
+        .node-treeview2:not(.node-disabled):hover {}
+    </style>
+    <style type="text/css" id="treeview-searchable-style">
+        .treeview .list-group-item {
+            cursor: pointer
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview-searchable {}
+
+        .node-treeview-searchable:not(.node-disabled):hover {
+            background-color: #F5F5F5;
+        }
+    </style>
+    <style type="text/css" id="treeview-selectable-style">
+        .treeview .list-group-item {
+            cursor: pointer
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview-selectable {}
+
+        .node-treeview-selectable:not(.node-disabled):hover {
+            background-color: #F5F5F5;
+        }
+    </style>
+    <style type="text/css" id="treeview-expandible-style">
+        .treeview .list-group-item {
+            cursor: pointer
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview-expandible {}
+
+        .node-treeview-expandible:not(.node-disabled):hover {
+            background-color: #F5F5F5;
+        }
+    </style>
+    <style type="text/css" id="treeview-checkable-style">
+        .treeview .list-group-item {
+            cursor: pointer
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview-checkable {}
+
+        .node-treeview-checkable:not(.node-disabled):hover {
+            background-color: #F5F5F5;
+        }
+    </style>
+    <style type="text/css" id="treeview-disabled-style">
+        .treeview .list-group-item {
+            cursor: pointer
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview-disabled {}
+
+        .node-treeview-disabled:not(.node-disabled):hover {
+            background-color: #F5F5F5;
+        }
+    </style>
+    <style type="text/css" id="treeview12-style">
+        .treeview .list-group-item {
+            cursor: default
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview12 {}
+
+        .node-treeview12:not(.node-disabled):hover {
+            background-color: #F5F5F5;
+        }
+    </style>
+
+    <head>
+        <%- include('../partials/head'); %>
+        <script src="/js/indexCode.js"></script>
+    </head>
+
+</head>
+
+<body data-gr-c-s-loaded="true" onload="getCompanies();getOptions();setCompanyNames()">
+    <div class="container">
+
+        <header>
+            <%- include('../partials/header'); %>
+        </header>
+
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="filtercontainer">Only differences
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="col-sm-4">
+                <label class="filtercontainer">Only similarities
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="col-sm-4">
+                <div class="search-container">
+                    <form action="">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row hide">
+            <h2>Searchable Tree</h2>
+            <div class="col-sm-4">
+                <h2>Input</h2>
+                <!-- <form> -->
+                <div class="form-group">
+                    <label for="input-search" class="sr-only">Search Tree:</label>
+                    <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="checkbox" id="chk-ignore-case" value="false">
+                        Ignore Case
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="checkbox" id="chk-exact-match" value="false">
+                        Exact Match
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="checkbox" id="chk-reveal-results" value="false">
+                        Reveal Results
+                    </label>
+                </div>
+                <button type="button" class="btn btn-success" id="btn-search">Search</button>
+                <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+                <!-- </form> -->
+            </div>
+            <div class="col-sm-4">
+                <h2>Tree</h2>
+                <div id="treeview-searchable" class="treeview">
+                    <ul class="list-group">
+                        <li class="list-group-item node-treeview-searchable" data-nodeid="0" style="color:undefined;background-color:undefined;"><span
+                                class="icon expand-icon glyphicon glyphicon-minus"></span><span class="icon node-icon"></span>Parent
+                            1</li>
+                        <li class="list-group-item node-treeview-searchable" data-nodeid="1" style="color:undefined;background-color:undefined;"><span
+                                class="indent"></span><span class="icon expand-icon glyphicon glyphicon-plus"></span><span
+                                class="icon node-icon"></span>Child 1</li>
+                        <li class="list-group-item node-treeview-searchable" data-nodeid="4" style="color:undefined;background-color:undefined;"><span
+                                class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon"></span>Child
+                            2</li>
+                        <li class="list-group-item node-treeview-searchable" data-nodeid="5" style="color:undefined;background-color:undefined;"><span
+                                class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 2</li>
+                        <li class="list-group-item node-treeview-searchable" data-nodeid="6" style="color:undefined;background-color:undefined;"><span
+                                class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 3</li>
+                        <li class="list-group-item node-treeview-searchable" data-nodeid="7" style="color:undefined;background-color:undefined;"><span
+                                class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 4</li>
+                        <li class="list-group-item node-treeview-searchable" data-nodeid="8" style="color:undefined;background-color:undefined;"><span
+                                class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 5</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h2>Results</h2>
+                <div id="search-output"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="row" id="companynames">
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm">
+                <div id="treeview1" class="treeview">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <div id="treeview2" class="treeview">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+
+    </div>
+    <script src="../bower_components/jquery/jquery.js"></script>
+    <script src="../js/bootstrap-treeview.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            defaultData = {};
+
+            $.getJSON('tree1.json', function (data) {
+                json = data
+
+                var $tree = $('#treeview1').treeview({
+                    data: json
+                });
+            });
+
+            $.getJSON('tree2.json', function (data) {
+                json = data
+
+                var $tree = $('#treeview2').treeview({
+                    data: json
+                });
+            });
+
+
+            var $searchableTree = $('#treeview-searchable').treeview({
+                data: defaultData,
+            });
+
+            var search = function (e) {
+                var pattern = $('#input-search').val();
+                var options = {
+                    ignoreCase: $('#chk-ignore-case').is(':checked'),
+                    exactMatch: $('#chk-exact-match').is(':checked'),
+                    revealResults: $('#chk-reveal-results').is(':checked')
+                };
+                var results = $searchableTree.treeview('search', [pattern, options]);
+
+                var output = '<p>' + results.length + ' matches found</p>';
+                $.each(results, function (index, result) {
+                    output += '<p>- ' + result.text + '</p>';
+                });
+                $('#search-output').html(output);
+            }
+
+            $('#btn-search').on('click', search);
+            $('#input-search').on('keyup', search);
+
+            $('#btn-clear-search').on('click', function (e) {
+                $searchableTree.treeview('clearSearch');
+                $('#input-search').val('');
+                $('#search-output').html('');
+            });
+
+
+            var initSelectableTree = function () {
+                return $('#treeview-selectable').treeview({
+                    data: defaultData,
+                    multiSelect: $('#chk-select-multi').is(':checked'),
+                    onNodeSelected: function (event, node) {
+                        $('#selectable-output').prepend('<p>' + node.text + ' was selected</p>');
+                    },
+                    onNodeUnselected: function (event, node) {
+                        $('#selectable-output').prepend('<p>' + node.text + ' was unselected</p>');
+                    }
+                });
+            };
+            var $selectableTree = initSelectableTree();
+
+            var findSelectableNodes = function () {
+                return $selectableTree.treeview('search', [$('#input-select-node').val(), { ignoreCase: false, exactMatch: false }]);
+            };
+            var selectableNodes = findSelectableNodes();
+
+            $('#chk-select-multi:checkbox').on('change', function () {
+                console.log('multi-select change');
+                $selectableTree = initSelectableTree();
+                selectableNodes = findSelectableNodes();
+            });
+
+            // Select/unselect/toggle nodes
+            $('#input-select-node').on('keyup', function (e) {
+                selectableNodes = findSelectableNodes();
+                $('.select-node').prop('disabled', !(selectableNodes.length >= 1));
+            });
+
+            $('#btn-select-node.select-node').on('click', function (e) {
+                $selectableTree.treeview('selectNode', [selectableNodes, { silent: $('#chk-select-silent').is(':checked') }]);
+            });
+
+            $('#btn-unselect-node.select-node').on('click', function (e) {
+                $selectableTree.treeview('unselectNode', [selectableNodes, { silent: $('#chk-select-silent').is(':checked') }]);
+            });
+
+            $('#btn-toggle-selected.select-node').on('click', function (e) {
+                $selectableTree.treeview('toggleNodeSelected', [selectableNodes, { silent: $('#chk-select-silent').is(':checked') }]);
+            });
+
+
+
+            var $expandibleTree = $('#treeview-expandible').treeview({
+                data: defaultData,
+                onNodeCollapsed: function (event, node) {
+                    $('#expandible-output').prepend('<p>' + node.text + ' was collapsed</p>');
+                },
+                onNodeExpanded: function (event, node) {
+                    $('#expandible-output').prepend('<p>' + node.text + ' was expanded</p>');
+                }
+            });
+
+            var findExpandibleNodess = function () {
+                return $expandibleTree.treeview('search', [$('#input-expand-node').val(), { ignoreCase: false, exactMatch: false }]);
+            };
+            var expandibleNodes = findExpandibleNodess();
+
+            // Expand/collapse/toggle nodes
+            $('#input-expand-node').on('keyup', function (e) {
+                expandibleNodes = findExpandibleNodess();
+                $('.expand-node').prop('disabled', !(expandibleNodes.length >= 1));
+            });
+
+            $('#btn-expand-node.expand-node').on('click', function (e) {
+                var levels = $('#select-expand-node-levels').val();
+                $expandibleTree.treeview('expandNode', [expandibleNodes, { levels: levels, silent: $('#chk-expand-silent').is(':checked') }]);
+            });
+
+            $('#btn-collapse-node.expand-node').on('click', function (e) {
+                $expandibleTree.treeview('collapseNode', [expandibleNodes, { silent: $('#chk-expand-silent').is(':checked') }]);
+            });
+
+            $('#btn-toggle-expanded.expand-node').on('click', function (e) {
+                $expandibleTree.treeview('toggleNodeExpanded', [expandibleNodes, { silent: $('#chk-expand-silent').is(':checked') }]);
+            });
+
+            // Expand/collapse all
+            $('#btn-expand-all').on('click', function (e) {
+                var levels = $('#select-expand-all-levels').val();
+                $expandibleTree.treeview('expandAll', { levels: levels, silent: $('#chk-expand-silent').is(':checked') });
+            });
+
+            $('#btn-collapse-all').on('click', function (e) {
+                $expandibleTree.treeview('collapseAll', { silent: $('#chk-expand-silent').is(':checked') });
+            });
+
+
+
+            var $checkableTree = $('#treeview-checkable').treeview({
+                data: defaultData,
+                showIcon: false,
+                showCheckbox: true,
+                onNodeChecked: function (event, node) {
+                    $('#checkable-output').prepend('<p>' + node.text + ' was checked</p>');
+                },
+                onNodeUnchecked: function (event, node) {
+                    $('#checkable-output').prepend('<p>' + node.text + ' was unchecked</p>');
+                }
+            });
+
+            var findCheckableNodess = function () {
+                return $checkableTree.treeview('search', [$('#input-check-node').val(), { ignoreCase: false, exactMatch: false }]);
+            };
+            var checkableNodes = findCheckableNodess();
+
+            // Check/uncheck/toggle nodes
+            $('#input-check-node').on('keyup', function (e) {
+                checkableNodes = findCheckableNodess();
+                $('.check-node').prop('disabled', !(checkableNodes.length >= 1));
+            });
+
+            $('#btn-check-node.check-node').on('click', function (e) {
+                $checkableTree.treeview('checkNode', [checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+            });
+
+            $('#btn-uncheck-node.check-node').on('click', function (e) {
+                $checkableTree.treeview('uncheckNode', [checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+            });
+
+            $('#btn-toggle-checked.check-node').on('click', function (e) {
+                $checkableTree.treeview('toggleNodeChecked', [checkableNodes, { silent: $('#chk-check-silent').is(':checked') }]);
+            });
+
+            // Check/uncheck all
+            $('#btn-check-all').on('click', function (e) {
+                $checkableTree.treeview('checkAll', { silent: $('#chk-check-silent').is(':checked') });
+            });
+
+            $('#btn-uncheck-all').on('click', function (e) {
+                $checkableTree.treeview('uncheckAll', { silent: $('#chk-check-silent').is(':checked') });
+            });
+
+
+
+            var $disabledTree = $('#treeview-disabled').treeview({
+                data: defaultData,
+                onNodeDisabled: function (event, node) {
+                    $('#disabled-output').prepend('<p>' + node.text + ' was disabled</p>');
+                },
+                onNodeEnabled: function (event, node) {
+                    $('#disabled-output').prepend('<p>' + node.text + ' was enabled</p>');
+                },
+                onNodeCollapsed: function (event, node) {
+                    $('#disabled-output').prepend('<p>' + node.text + ' was collapsed</p>');
+                },
+                onNodeUnchecked: function (event, node) {
+                    $('#disabled-output').prepend('<p>' + node.text + ' was unchecked</p>');
+                },
+                onNodeUnselected: function (event, node) {
+                    $('#disabled-output').prepend('<p>' + node.text + ' was unselected</p>');
+                }
+            });
+
+            var findDisabledNodes = function () {
+                return $disabledTree.treeview('search', [$('#input-disable-node').val(), { ignoreCase: false, exactMatch: false }]);
+            };
+            var disabledNodes = findDisabledNodes();
+
+            // Expand/collapse/toggle nodes
+            $('#input-disable-node').on('keyup', function (e) {
+                disabledNodes = findDisabledNodes();
+                $('.disable-node').prop('disabled', !(disabledNodes.length >= 1));
+            });
+
+            $('#btn-disable-node.disable-node').on('click', function (e) {
+                $disabledTree.treeview('disableNode', [disabledNodes, { silent: $('#chk-disable-silent').is(':checked') }]);
+            });
+
+            $('#btn-enable-node.disable-node').on('click', function (e) {
+                $disabledTree.treeview('enableNode', [disabledNodes, { silent: $('#chk-disable-silent').is(':checked') }]);
+            });
+
+            $('#btn-toggle-disabled.disable-node').on('click', function (e) {
+                $disabledTree.treeview('toggleNodeDisabled', [disabledNodes, { silent: $('#chk-disable-silent').is(':checked') }]);
+            });
+
+            // Expand/collapse all
+            $('#btn-disable-all').on('click', function (e) {
+                $disabledTree.treeview('disableAll', { silent: $('#chk-disable-silent').is(':checked') });
+            });
+
+            $('#btn-enable-all').on('click', function (e) {
+                $disabledTree.treeview('enableAll', { silent: $('#chk-disable-silent').is(':checked') });
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>

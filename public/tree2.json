@@ -1,0 +1,116 @@
+[
+    {
+        "dataname": "Content",
+        "nodes": [
+            {
+                "dataname": "Gender",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            },
+            {
+                "dataname": "Messages",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            },
+            {
+                "dataname": "Photo's",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            },
+            {
+                "dataname": "Followers",
+                "nodes": [
+                    {
+                        "dataname": "Following",
+                        "FacebookName": ".",
+                        "FacebookInfo": ".",
+                        "GoogleName": ".",
+                        "GoogleInfo": ".",
+                        "InstagramName": ".",
+                        "InstagramInfo": ".",
+                        "LinkedinName": ".",
+                        "LinkedinInfo": "."
+                    },
+                    {
+                        "dataname": "Followers",
+                        "FacebookName": ".",
+                        "FacebookInfo": ".",
+                        "GoogleName": ".",
+                        "GoogleInfo": ".",
+                        "InstagramName": ".",
+                        "InstagramInfo": ".",
+                        "LinkedinName": ".",
+                        "LinkedinInfo": "."
+                    }
+                ]
+            },
+            {
+                "dataname": "Groups",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            },
+            {
+                "dataname": "Events",
+                "nodes": [
+                    {
+                        "dataname": "Birthdays",
+                        "FacebookName": ".",
+                        "FacebookInfo": ".",
+                        "GoogleName": ".",
+                        "GoogleInfo": ".",
+                        "InstagramName": ".",
+                        "InstagramInfo": ".",
+                        "LinkedinName": ".",
+                        "LinkedinInfo": "."
+                    },
+                    {
+                        "dataname": "Parties",
+                        "FacebookName": ".",
+                        "FacebookInfo": ".",
+                        "GoogleName": ".",
+                        "GoogleInfo": ".",
+                        "InstagramName": ".",
+                        "InstagramInfo": ".",
+                        "LinkedinName": ".",
+                        "LinkedinInfo": "."
+                    }
+                ]
+            },
+            {
+                "dataname": "Pages",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            }
+        ]
+    }
+]

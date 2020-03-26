@@ -1,0 +1,40 @@
+[
+    {
+        "dataname": "General",
+        "nodes": [
+            {
+                "dataname": "Languages",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            },
+            {
+                "dataname": "Formats",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            },
+            {
+                "dataname": "Niveaus",
+                "FacebookName": ".",
+                "FacebookInfo": ".",
+                "GoogleName": ".",
+                "GoogleInfo": ".",
+                "InstagramName": ".",
+                "InstagramInfo": ".",
+                "LinkedinName": ".",
+                "LinkedinInfo": "."
+            }
+        ]
+    }
+]

@@ -1,0 +1,36 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+    <script src="/js/indexCode.js"></script>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Data packages</h1>
+            <p>Compare different data packages by pressing the button below</p>
+
+            <div class="row">
+                <div class="col-sm comparebtn">
+                    <button class="btn btn-primary" onClick="location.href='data1'">Take me there</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

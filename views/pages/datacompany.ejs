@@ -1,0 +1,48 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+    <script src="/js/indexCode.js"></script>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Data companies</h1>
+            <p>Choose the companies you want to compare (mininmum of 1 and maximum of 4)</p>
+
+            <div class="socialmedia checkboxes d-flex flex-column justify-content-center">
+                <% for (var i = 0; i < companies.length; i++) { %>
+                <div class="p-2">
+                    <label class="filtercontainer">
+                        <p><%= companies[i] %></p>
+                        <input type="checkbox" class="checkbox" id="<%= companies[i] %>">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="row">
+                <div class="col-sm comparebtn">
+                    <button class="btn btn-primary" onClick="goToOptionsPage()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

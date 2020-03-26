@@ -1,0 +1,102 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+    <script src="/js/indexCode.js"></script>
+</head>
+
+<body class="container" onload="getCompanies()">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Data subjects</h1>
+            <p>Select all subjects you are interested in (At least 1)</p>
+
+            <div class="options row">
+
+                <div style="margin-bottom:<%= marginBottom %>">
+                    <h2>General</h2>
+
+                    <div class="col-sm-6 checkboxes">
+                        <% for (var i = 0; i < optionsGeneral.length/2; i++) { %>
+                        <div>
+                            <label class="filtercontainer">
+                                <p>
+                                    <%= optionsGeneral[i] %>
+                                </p>
+                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <% } %>
+                    </div>
+
+                    <div class="col-sm-6 checkboxes">
+                        <% for (var i = Math.ceil(optionsGeneral.length/2); i < optionsGeneral.length; i++) { %>
+                        <div>
+                            <label class="filtercontainer">
+                                <p>
+                                    <%= optionsGeneral[i] %>
+                                </p>
+                                <input type="checkbox" class="checkbox" id="<%= optionsGeneral[i] %>">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <h2>Content</h2>
+
+                <div class="col-sm-6 checkboxes">
+                    <% for (var i = 0; i < optionsContent.length/2; i++) { %>
+                    <div>
+                        <label class="filtercontainer">
+                            <p>
+                                <%= optionsContent[i] %>
+                            </p>
+                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <% } %>
+                </div>
+
+                <div class="col-sm-6 checkboxes">
+                    <% for (var i = Math.ceil(optionsContent.length/2); i < optionsContent.length; i++) { %>
+                    <div>
+                        <label class="filtercontainer">
+                            <p>
+                                <%= optionsContent[i] %>
+                            </p>
+                            <input type="checkbox" class="checkbox" id="<%= optionsContent[i] %>">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <% } %>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm comparebtn">
+                    <button class="btn btn-primary" onClick="goToComparePage()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
