@@ -1,7 +1,9 @@
 {
   "name": "test",
   "version": "0.0.0",
-  "private": true,
+  "description": "",
+  "author": "Timo Lapre",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
@@ -10,8 +12,12 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "minimist": "^1.2.5",
     "request": "^2.88.2",
     "showdown": "^1.9.1",
     "sqlite3": "^4.1.1"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
