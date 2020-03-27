@@ -36,12 +36,14 @@
                 <div class="col-sm-6 checkboxes">
                     <% for (var i = Math.ceil(companies.length/2); i < companies.length; i++) { %>
                     <div>
-                        <label class="filtercontainer">
-                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>" onclick="checkIfCompaniesSelected()">
-                            <span class="checkmark"></span>
+                        <label class="filtercontainer disabled">
+                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>" onclick="checkIfCompaniesSelected()" disabled>
+                            <span class="checkmarkdisabled"></span>
                             <p>
                                 <%= companies[i] %>
                             </p>
+                            &emsp;                        
+                            <p>(Coming soon)</p>
                         </label>
                     </div>
                     <% } %>

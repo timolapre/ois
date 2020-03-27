@@ -4,36 +4,21 @@
         "nodes": [
             {
                 "dataname": "Languages",
-
                 "FacebookOptions": "English",
-
                 "GoogleOptions": "English",
-
-                "InstagramOptions": "English",
-
-                "LinkedinOptions": "-"
+                "InstagramOptions": "English"
             },
             {
                 "dataname": "Formats",
-                
                 "FacebookOptions": "HTML / JSON",
-
                 "GoogleOptions": "Depends on product",
-
-                "InstagramOptions": "Plain text",
-
-                "LinkedinOptions": "-"
+                "InstagramOptions": "Plain text"
             },
             {
                 "dataname": "Quality",
-
                 "FacebookOptions": "High / Medium / Low",
-
                 "GoogleOptions": "No options",
-
-                "InstagramOptions": "No options",
-
-                "LinkedinOptions": "-"
+                "InstagramOptions": "No options"
             }
         ]
     }

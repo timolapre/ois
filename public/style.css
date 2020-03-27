@@ -84,6 +84,10 @@ body{
     margin: 0;
   }
 
+  .filtercontainer.disabled{
+    cursor: not-allowed;
+  }
+
   .filtercontainer p{
       display: inline;
   }
@@ -106,6 +110,15 @@ body{
     border-radius: 10px;
     float: right;
   }
+
+  .checkmarkdisabled{
+    top: 0;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(204, 204, 204, 0.4);
+    border-radius: 10px;
+    float: right;
+}
   
   /* On mouse-over, add a grey background color */
   .filtercontainer:hover input ~ .checkmark {

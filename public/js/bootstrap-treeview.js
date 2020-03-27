@@ -88,6 +88,10 @@
 		this.$element = $(element);
 		this.elementId = element.id;
 		this.styleId = this.elementId + '-style';
+		this.r = 51;
+		this.g = 121;
+		this.b = 183;
+		this.a = 255;
 
 		this.init(options);
 
@@ -297,7 +301,7 @@
 					node.state.expanded = true;
 				}
 				else {
-					node.state.expanded = false;
+					node.state.expanded = true;
 				}
 			}
 
@@ -505,12 +509,13 @@
 
 	// Starting from the root node, and recursing down the
 	// structure we build the tree one node at a time
-	Tree.prototype.buildTree = function (nodes, level, treeid) {
+	Tree.prototype.buildTree = function (nodes, level) {
 
 		if (!nodes) return;
 		level += 1;
 
 		var _this = this;
+		var bgcolor = "rgba(" + _this.r + "," + _this.g + "," + _this.b + "," + _this.a + ")";
 		$.each(nodes, function addNodes(id, node) {
 
 			var treeItem = $(_this.template.item)
@@ -524,6 +529,7 @@
 
 			if (node.nodes) {
 				treeItem.addClass("parentbg");
+				//treeItem.attr('style', "background-color:" + bgcolor);
 			}
 			else if (id % 2 == 0) {
 				treeItem.addClass("graybg");
@@ -651,6 +657,7 @@
 				text += '</div>';
 
 				treeItem.append(text);
+
 
 			}
 
