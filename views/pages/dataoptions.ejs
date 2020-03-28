@@ -21,7 +21,7 @@
 
             <div class="options row">
 
-                <div style="margin-bottom:<%= marginBottom %>">
+                <div style="margin-bottom:<%= marginBottom %>" id="generallist">
                     <h2>General</h2>
                     <div class="col-sm-12 checkboxes">
                         <div>
@@ -38,8 +38,9 @@
                     <div class="col-sm-6 checkboxes">
                         <% for (var i = 0; i < optionsGeneral.length/2; i++) { %>
                         <div>
-                            <label class="filtercontainer">
-                                <input type="checkbox" class="checkbox checkboxgeneral" id="<%= optionsGeneral[i] %>" onclick="checkIfOptionsSelected()">
+                            <label class="filtercontainer" id="<%= optionsGeneral[i] %>">
+                                <input type="checkbox" class="checkbox checkboxgeneral" 
+                                    onclick="checkIfOptionsSelected()">
                                 <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
@@ -52,8 +53,9 @@
                     <div class="col-sm-6 checkboxes">
                         <% for (var i = Math.ceil(optionsGeneral.length/2); i < optionsGeneral.length; i++) { %>
                         <div>
-                            <label class="filtercontainer">
-                                <input type="checkbox" class="checkbox checkboxgeneral" id="<%= optionsGeneral[i] %>" onclick="checkIfOptionsSelected()">
+                            <label class="filtercontainer" id="<%= optionsGeneral[i] %>">
+                                <input type="checkbox" class="checkbox checkboxgeneral"
+                                    onclick="checkIfOptionsSelected()">
                                 <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
@@ -64,6 +66,25 @@
                     </div>
                 </div>
 
+                <h2>Content</h2>
+
+                <div class="col-sm-12 checkboxes">
+                        <div>
+                            <label class="filtercontainer" onclick="selectAllContent();checkIfOptionsSelected()">
+                                <input type="checkbox" class="" id="checkboxcontentall">
+                                <span class="checkmark"></span>
+                                <p>
+                                    Select all
+                                </p>
+                            </label>
+                        </div>
+                    </div>
+                    
+                <div class="col-sm-12 checkboxes" id="optionslist">
+
+                </div>
+
+                <!--
                 <h2>Content</h2>
                 <div class="col-sm-12 checkboxes">
                     <div>
@@ -104,6 +125,7 @@
                     </div>
                     <% } %>
                 </div>
+                -->
 
             </div>
 

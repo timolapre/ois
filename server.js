@@ -5,8 +5,8 @@ var app = express();
 
 var companies = ["Facebook", "Google", "Instagram", "Linkedin", "Tiktok", "Snapchat"];
 var optionsGeneral = ["Languages", "Formats", "Quality"];
-var optionsContent = ["Profile", "Gender", "Name", "First name", "Last name", "Full name","E-mails","Birthday","Hometown","Connections","Photos", "Comments", "Comments send", "Comments received"];
-var marginBottom = Math.ceil(optionsGeneral.length/2)*100+80 +"px";
+var optionsContent = ["Profile", ["Gender", "Name", "First Name"], "Name", "First name", "Last name", "Full name","E-mails","Birthday","Hometown","Connections","Photos", "Comments", "Comments send", "Comments received"];
+var marginBottom = Math.ceil(optionsGeneral.length/2)*100+100 +"px";
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));

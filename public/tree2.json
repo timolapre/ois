@@ -21,7 +21,7 @@
                         "dataname": "Name",
                         "nodes": [
                             {
-                                "dataname": "First name",
+                                "dataname": "FirstName",
                                 "FacebookName": "first_name",
                                 "FacebookOptions": "String with characters of any length",
                                 "FacebookInfo": "The first name of the user",
@@ -30,7 +30,7 @@
                                 "GoogleInfo": "The first name of the user"
                             },
                             {
-                                "dataname": "Last name",
+                                "dataname": "LastName",
                                 "FacebookName": "last_name",
                                 "FacebookOptions": "String with characters of any length",
                                 "FacebookInfo": "The last name of the user",
@@ -39,7 +39,7 @@
                                 "GoogleInfo": "The last name of the user"
                             },
                             {
-                                "dataname": "Full name",
+                                "dataname": "FullName",
                                 "FacebookName": "full_name",
                                 "FacebookOptions": "String with characters of any length",
                                 "FacebookInfo": "The full name of the user",
@@ -109,7 +109,7 @@
                 "dataname": "Comments",
                 "nodes": [
                     {
-                        "dataname": "Comments send",
+                        "dataname": "CommentsSend",
                         "FacebookName": "[{data > [{post}]}, title]",
                         "FacebookOptions": "",
                         "FacebookInfo": "Posts put on timeline",
@@ -121,7 +121,7 @@
                         "InstagramInfo": ""
                     },
                     {
-                        "dataname": "Comments received",
+                        "dataname": "CommentsReceived",
                         "FacebookName": "wall_posts_sent_to_you > activity_log_data > [{data > [{post}]}, title]",
                         "FacebookOptions": "",
                         "FacebookInfo": "Posts from other users put on timeline of user",

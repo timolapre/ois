@@ -15,7 +15,7 @@ function goToComparePage() {
     var options = ""
     for (i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
-            options += checkboxes[i].id + ",";
+            options += checkboxes[i].parentNode.id + ",";
         }
     }
     options = options.substring(0, options.length - 1);
@@ -156,4 +156,71 @@ function checkIfOptionsSelected() {
     } else {
         button.disabled = true;
     }
+}
+
+function checkChildren(id) {
+    var parent = $("#" + id);
+    var children = parent.children('div');
+    if (children.length == 0) return;
+    var parentchecked = parent.children('input').prop("checked");
+    var labels = children.children('label');
+    children.children('label').children('input').prop("checked", parentchecked);
+    for (var i = 0; i < labels.length; i++) {
+        checkChildren(labels.attr('id'));
+    }
+}
+
+function checkParents(id) {
+    var child = $("#" + id);
+    var parent = child.parent().parent().parent();
+    var label = parent.children('label');
+    if (child.children('input').prop("checked")) {
+        label.children('input').prop("checked", true);
+        checkParents(label.attr('id'))
+    }
+}
+
+var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"]];
+$(document).ready(function () {
+    addOptions(optionsarray, 'optionslist')
+});
+
+function addOptions(array, id) {
+    var addto = $("#" + id);
+
+
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] instanceof Array) {
+            var p = $('<p></p>').text(array[i][0]);
+            var span = $('<span class="checkmark"></span>')
+            var input = $('<input type="checkbox" class="checkbox checkboxcontent" onclick="checkChildren(\'' + array[i][0].replace(/\s/g, '') + '\');checkParents(\'' + array[i][0] + '\');checkIfOptionsSelected()">');
+            var label = $('<label class="filtercontainer" id="' + array[i][0].replace(/\s/g, '') + '"></label>');
+            label.append(input, span, p);
+            var div = $('<div></div>').append(label);
+            addto.append(div);
+            addOptions(array[i].slice(1), array[i][0]);
+        }
+        else {
+            var p = $('<p></p>').text(array[i]);
+            var span = $('<span class="checkmark"></span>')
+            var input = $('<input type="checkbox" class="checkbox checkboxcontent" onclick="checkParents(\'' + array[i].replace(/\s/g, '') + '\');checkIfOptionsSelected()">');
+            var label = $('<label class="filtercontainer" id=\'' + array[i].replace(/\s/g, '') + '\'></label>');
+            label.append(input, span, p);
+            var div = $('<div></div>').append(label);
+            addto.append(div);
+        }
+    }
+
+    /*
+        <div>
+            <label class="filtercontainer">
+                <input type="checkbox" class="checkbox checkboxcontent" id="<%= optionsContent[i] %>"
+                    onclick="checkIfOptionsSelected()">
+                <span class="checkmark"></span>
+                <p>
+                    <%= optionsContent[i] %>
+                </p>
+            </label>
+        </div>
+    */
 }

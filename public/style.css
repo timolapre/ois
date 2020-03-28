@@ -21,15 +21,15 @@ body{
     border: 5px #337AB7 solid;
 }
 
-.checkboxes{
-    margin-top: 20px;
-}
 
 .checkboxes div{
     border: 1px silver solid;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     display: flex;
+}
+.filtercontainer div {
+    margin: 15px 45px 15px 10px;
 }
 
 .comparebtn button{
@@ -121,7 +121,7 @@ body{
 }
   
   /* On mouse-over, add a grey background color */
-  .filtercontainer:hover input ~ .checkmark {
+  .afiltercontainer:hover input ~ .checkmark {
     background-color: #aaa;
   }
   
@@ -164,10 +164,6 @@ body{
     transform: rotate(45deg);
   }
 
-.col-sm-6{
-    margin-top: 10px;
-}
-
 .treeview{
     font-size: 18px;
 }
@@ -178,4 +174,12 @@ body{
 
 .tabledata{
     margin-top: 30px;
+}
+
+.options h2{
+    margin-bottom: 30px;
+}
+
+.searchbar{
+    float: right;
 }
