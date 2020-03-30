@@ -1,19 +1,28 @@
 <!-- views/partials/header.ejs -->
 
-<nav class="navbar navbar-default" role="navigation">
-<div class="container-fluid">
-
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/">
-            Data packages
-        </a>
-
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Data packages</a>
+        </div>
         <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
             <li><a href="/data1">Compare</a></li>
-            <!-- <li><a href="/about">About</a></li> -->
         </ul>
-    </div>
 
-</div>
+        <% if (loggedin == 1) { %>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="data3?companies=Facebook,Google&options=General,Content,Languages,Formats,Quality,Profile,Name,FirstName,LastName,FullName,Comments,CommentsSend,CommentsReceived"><span class=""></span>See bookmarked</a></li>
+            <li>
+                <form action="/logout" method="POST">
+                    <button type="text" class="btn btn-link" id="logoutbutton">Logout</button>
+                </form>
+            </li>
+        </ul>
+        <%} else { %>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/register"><span class=""></span>Register</a></li>
+            <li><a href="/login"><span class=""></span>Login</a></li>
+        </ul>
+        <% } %>
+    </div>
 </nav>

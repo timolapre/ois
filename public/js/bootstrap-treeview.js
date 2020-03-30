@@ -51,7 +51,7 @@
 		searchResultBackColor: undefined, //'#FFFFFF',
 
 		enableLinks: false,
-		highlightSelected: true,
+		highlightSelected: false,
 		highlightSearchResults: true,
 		showBorder: true,
 		showIcon: true,
@@ -336,8 +336,8 @@
 		}
 		else if ((classList.indexOf('check-icon') !== -1)) {
 
-			this.toggleCheckedState(node, _default.options);
-			this.render();
+			//this.toggleCheckedState(node, _default.options);
+			//this.render();
 		}
 		else {
 
@@ -347,7 +347,7 @@
 				this.toggleExpandedState(node, _default.options);
 			}
 
-			this.render();
+			//this.render();
 		}
 	};
 
@@ -629,7 +629,13 @@
 
 				treeItem.append(node.dataname);
 
-				var text = '<div class="row tabledata">' +
+				var text = '';
+
+				if (!node.nodes) {
+					text += '<div class="glyphicon glyphicon-star-empty star" style="float:right" onclick="toggleStar(this.id)" id="star'+_this.treeid + node.dataname + id +'"></div>'
+				}
+
+				text += '<div class="row tabledata">' +
 					'<div class="col-sm-' + colsm1 + '">';
 
 				for (var j = 0; j < infoOptions.length; j++) {
@@ -871,7 +877,7 @@
 			this.setSelectedState(node, true, options);
 		}, this));
 
-		this.render();
+		//this.render();
 	};
 
 	/**
@@ -884,7 +890,7 @@
 			this.setSelectedState(node, false, options);
 		}, this));
 
-		this.render();
+		//this.render();
 	};
 
 	/**
@@ -897,7 +903,7 @@
 			this.toggleSelectedState(node, options);
 		}, this));
 
-		this.render();
+		//this.render();
 	};
 
 

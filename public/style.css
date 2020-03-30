@@ -6,6 +6,20 @@ body{
     cursor: pointer;
 }
 
+#registered{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+#logoutbutton{
+    padding-top: 13px;
+    text-decoration: none;
+}
+
+.socialmedia{
+    margin-top: 50px;
+}
+
 .socialmediabuttons button{
     display: block;
     margin: 10px 10px 10px 50px;
@@ -21,6 +35,9 @@ body{
     border: 5px #337AB7 solid;
 }
 
+.star{
+    font-size: 25px;
+}
 
 .checkboxes div{
     border: 1px silver solid;

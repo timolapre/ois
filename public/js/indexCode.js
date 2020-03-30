@@ -60,7 +60,7 @@ function setCompanyNames() {
 
 function getColsm() {
     var count = getCompanies().length;
-    var colsm1 = 4;
+    var colsm1 = 3;
     var colsm = 4;
     if (count == 1) {
         colsm1 = 6;
