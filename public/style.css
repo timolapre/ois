@@ -35,8 +35,14 @@ body{
     border: 5px #337AB7 solid;
 }
 
-.star{
+.glyphicon-star-empty{
     font-size: 25px;
+    color: black;
+}
+
+.glyphicon-star{
+    font-size: 25px;
+    color: gold;
 }
 
 .checkboxes div{
@@ -56,6 +62,10 @@ body{
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.comparebtn .large-button{
+    width: 180px;
 }
 
 .graybg{
