@@ -223,14 +223,19 @@
 
 
 
-        <div class="row">
-            <div class="col-sm-4">
+        <div class="row datafilter">
+            <div class="col-sm-3">
+                <button class="btn btn-primary button" onclick="location.href='data2'+ window.location.search.split('&options=')">Back</button>
+                <p></p>
+                <button class="btn btn-primary button" onclick="copyURL()">Share data</button>
+            </div>
+            <div class="col-sm-3">
                 <label class="filtercontainer">Only differences
                     <input type="checkbox">
                     <span class="checkmark"></span>
                 </label>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <label class="filtercontainer">Only similarities
                     <input type="checkbox">
                     <span class="checkmark"></span>
@@ -240,8 +245,6 @@
                 <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
             </form>
         </div>
-
-
 
 
 

@@ -627,6 +627,7 @@
 					var infoOptions = ["Name", "Options", "Info"];
 				}
 
+				//var dataname = '<div class="nodetitle">'+ node.dataname + '</div>'
 				treeItem.append(node.dataname);
 
 				var text = '';

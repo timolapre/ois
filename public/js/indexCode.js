@@ -36,6 +36,37 @@ function getOptions() {
     return options;
 }
 
+function removeCompany(company) {
+    var url = window.location.href.split('?')[0];
+    var options = window.location.href.split('&')[1];
+    var companies = window.location.href.split('=')[1].split('&')[0].split(',');
+    if (companies.length <= 1) {
+        return;
+    }
+    const index = companies.indexOf(company);
+    if (index > -1) {
+        companies.splice(index, 1);
+    }
+    location.href = url + "?companies=" + companies + "&" + options;
+}
+
+function addCompany() {
+    var url = window.location.href.split('?')[0];
+    var options = window.location.href.split('&')[1];
+    var companies = window.location.href.split('=')[1].split('&')[0].split(',');
+    if (companies.length >= 3) {
+        return;
+    }
+    var newCompanies = ['Facebook', 'Google', 'Instagram'];
+    for (var i = 0; i < newCompanies.length; i++) {
+        if (!companies.includes(newCompanies[i])) {
+            var newCompany = newCompanies[i];
+            break;
+        }
+    }
+    location.href = url + "?companies=" + companies + "," + newCompany + "&" + options;
+}
+
 function setCompanyNames() {
     var companies = getCompanies();
     var companynames = document.getElementById('companynames');
@@ -47,14 +78,71 @@ function setCompanyNames() {
     div.className = "col-sm-" + colsm1;
     companynames.appendChild(div);
 
+    /*
+    <select class="browser-default custom-select">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>   
+    */
+
     for (i = 0; i < companies.length; i++) {
         div = document.createElement('div');
         div.className = "col-sm-" + colsm;
+
+
+        select = document.createElement('select');
+        select.className = "dropdown companyselect";
+
+        var allcompanies = ["Facebook", "Google", "Instagram"];
+        for (var j = 0; j < allcompanies.length; j++) {
+            var option = document.createElement('option');
+            if (companies[i] == allcompanies[j]) {
+                option.selected = true;
+            }
+            option.className = "dropdown-item";
+            option.value = j;
+            var text = document.createTextNode(allcompanies[j]);
+            option.appendChild(text);
+            select.appendChild(option);
+        }
+
+        div.appendChild(select);
+
         h2 = document.createElement('h2');
         text = document.createTextNode(companies[i]);
+
+
         h2.appendChild(text);
-        div.appendChild(h2);
+        //div.appendChild(h2);
+
+        btn = document.createElement('button');
+        btn.className = 'btn btn-primary addbutton';
+        btn.id = companies[i];
+        btn.addEventListener("click", function () {
+            removeCompany(this.id);
+        }, false);
+        p = document.createElement('p');
+        text = document.createTextNode('-');
+        p.appendChild(text);
+        btn.appendChild(p);
+        div.appendChild(btn);
+
         companynames.appendChild(div);
+    }
+    if (companies.length < 3) {
+        btn = document.createElement('button');
+        btn.className = 'btn btn-primary addbutton';
+        btn.id = "addbutton";
+        btn.addEventListener("click", function () {
+            addCompany();
+        }, false);
+        p = document.createElement('p');
+        text = document.createTextNode('+');
+        p.appendChild(text);
+        btn.appendChild(p);
+        companynames.appendChild(btn);
     }
 }
 
@@ -182,7 +270,7 @@ function checkParents(id) {
 
 var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"]];
 $(document).ready(function () {
-    addOptions(optionsarray, 'optionslist')
+    addOptions(optionsarray, 'optionslist');
 });
 
 function addOptions(array, id) {

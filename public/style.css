@@ -64,6 +64,12 @@ body{
     margin-right: auto;
 }
 
+.button{
+    display: inline;
+    width: 150px;
+    font-size: 20px;
+}
+
 .comparebtn .large-button{
     width: 180px;
 }
@@ -210,3 +216,40 @@ body{
 .searchbar{
     float: right;
 }
+.datafilter{
+    margin: 40px 0;
+}
+
+.nodetitle{
+    font-weight: bold;
+}
+
+.addbutton{
+    height: 25px;
+    width: 25px;
+    font-size: 30px;
+    padding: 6px;
+    margin: 0px 10px 10px;
+}
+
+.addbutton p{
+    position: relative;
+    height: 0px;
+    width: 0px;
+    text-align: center;
+    margin-top: -22px;
+    margin-left: 0px;
+}
+
+#companynames h2{
+    display: inline;
+}
+
+.companyselect{
+    font-size: 25px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }

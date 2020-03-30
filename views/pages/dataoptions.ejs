@@ -16,6 +16,7 @@
 
     <main>
         <div class="jumbotron">
+            <button class="btn btn-primary button" onclick="location.href='data1'">Back</button>
             <h1>Data subjects</h1>
             <p>Select all subjects you are interested in (At least 1)</p>
 
@@ -39,8 +40,7 @@
                         <% for (var i = 0; i < optionsGeneral.length/2; i++) { %>
                         <div>
                             <label class="filtercontainer" id="<%= optionsGeneral[i] %>">
-                                <input type="checkbox" class="checkbox checkboxgeneral" 
-                                    onclick="checkIfOptionsSelected()">
+                                <input type="checkbox" class="checkbox checkboxgeneral" onclick="checkIfOptionsSelected()">
                                 <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
@@ -54,8 +54,7 @@
                         <% for (var i = Math.ceil(optionsGeneral.length/2); i < optionsGeneral.length; i++) { %>
                         <div>
                             <label class="filtercontainer" id="<%= optionsGeneral[i] %>">
-                                <input type="checkbox" class="checkbox checkboxgeneral"
-                                    onclick="checkIfOptionsSelected()">
+                                <input type="checkbox" class="checkbox checkboxgeneral" onclick="checkIfOptionsSelected()">
                                 <span class="checkmark"></span>
                                 <p>
                                     <%= optionsGeneral[i] %>
@@ -69,17 +68,17 @@
                 <h2>Content</h2>
 
                 <div class="col-sm-12 checkboxes">
-                        <div>
-                            <label class="filtercontainer" onclick="selectAllContent();checkIfOptionsSelected()">
-                                <input type="checkbox" class="" id="checkboxcontentall">
-                                <span class="checkmark"></span>
-                                <p>
-                                    Select all
-                                </p>
-                            </label>
-                        </div>
+                    <div>
+                        <label class="filtercontainer" onclick="selectAllContent();checkIfOptionsSelected()">
+                            <input type="checkbox" class="" id="checkboxcontentall">
+                            <span class="checkmark"></span>
+                            <p>
+                                Select all
+                            </p>
+                        </label>
                     </div>
-                    
+                </div>
+
                 <div class="col-sm-12 checkboxes" id="optionslist">
 
                 </div>
