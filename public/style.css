@@ -253,3 +253,11 @@ body{
     position: relative;
     display: inline-block;
   }
+
+  .blue{
+      color: #337AB7;
+  }
+
+  .clickable{
+    cursor: pointer;
+  }

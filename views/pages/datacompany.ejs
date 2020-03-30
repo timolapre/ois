@@ -16,6 +16,7 @@
 
     <main>
         <div class="jumbotron">
+            <p class="button">Companies</p>
             <h1>Data companies</h1>
             <p>Choose the companies you want to compare (minimum of 1 and maximum of 3)</p>
             <div class="socialmedia row">
@@ -37,12 +38,13 @@
                     <% for (var i = Math.ceil(companies.length/2); i < companies.length; i++) { %>
                     <div>
                         <label class="filtercontainer disabled">
-                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>" onclick="checkIfCompaniesSelected()" disabled>
+                            <input type="checkbox" class="checkbox" id="<%= companies[i] %>" onclick="checkIfCompaniesSelected()"
+                                disabled>
                             <span class="checkmarkdisabled"></span>
                             <p>
                                 <%= companies[i] %>
                             </p>
-                            &emsp;                        
+                            &emsp;
                             <p>(Coming soon)</p>
                         </label>
                     </div>
