@@ -9,12 +9,15 @@
                         "dataname": "Gender",
                         "FacebookName": "gender > gender_option",
                         "FacebookOptions": "MALE / FEMALE",
+                        "FacebookFrequency": "Only once",
                         "FacebookInfo": "The gender of the user",
                         "GoogleName": "gender > type",
                         "GoogleOptions": "male / female",
+                        "GoogleFrequency": "Only once",
                         "GoogleInfo": "The gender of the user",
                         "InstagramName": "gender",
                         "InstagramOptions": "male / female",
+                        "InstagramFrequency": "On change",
                         "InstagramInfo": "The gender of the user"
                     },
                     {
@@ -24,30 +27,37 @@
                                 "dataname": "FirstName",
                                 "FacebookName": "first_name",
                                 "FacebookOptions": "String with characters of any length",
+                                "FacebookFrequency": "On change",
                                 "FacebookInfo": "The first name of the user",
                                 "GoogleName": "givenName",
                                 "GoogleOptions": "String with characters of any length",
+                                "GoogleFrequency": "On change",
                                 "GoogleInfo": "The first name of the user"
                             },
                             {
                                 "dataname": "LastName",
                                 "FacebookName": "last_name",
                                 "FacebookOptions": "String with characters of any length",
+                                "FacebookFrequency": "On change",
                                 "FacebookInfo": "The last name of the user",
                                 "GoogleName": "familyName",
                                 "GoogleOptions": "String with characters of any length",
+                                "GoogleFrequency": "On Change",
                                 "GoogleInfo": "The last name of the user"
                             },
                             {
                                 "dataname": "FullName",
                                 "FacebookName": "full_name",
                                 "FacebookOptions": "String with characters of any length",
+                                "FacebookFrequency": "On change",
                                 "FacebookInfo": "The full name of the user",
                                 "GoogleName": "formattedName",
                                 "GoogleOptions": "String with characters of any length",
+                                "GoogleFrequency": "On change",
                                 "GoogleInfo": "The full name of the user",
                                 "InstagramName": "name",
                                 "InstagramOptions": "String with characters of any length",
+                                "InstagramFrequency": "On change",
                                 "InstagramInfo": "The name of the user"
                             }
                         ]
@@ -56,27 +66,33 @@
                         "dataname": "E-mails",
                         "FacebookName": "emails > [emails]",
                         "FacebookOptions": "Array with any amount of email strings",
+                        "FacebookFrequency": "On change",
                         "FacebookInfo": "The emails of the user",
                         "GoogleName": "emails > [{value}]",
                         "GoogleOptions": "Array with any amount of json with email strings",
+                        "GoogleFrequency": "On change",
                         "GoogleInfo": "The emails of the user",
                         "InstagramName": "email",
                         "InstagramOptions": "Email string",
+                        "InstagramFrequency": "On change",
                         "InstagramInfo": "The email of the user"
                     },
                     {
                         "dataname": "Birthday",
                         "FacebookName": "birthday > (year, month, day)",
                         "FacebookOptions": "json with integers",
+                        "FacebookFrequency": "Only once",
                         "FacebookInfo": "The birthday of the user",
                         "GoogleName": "birthday",
                         "GoogleOptions": "String as year-month-day",
+                        "GoogleFrequency": "Only once",
                         "GoogleInfo": "The birthday of the user"
                     },
                     {
                         "dataname": "Hometown",
                         "FacebookName": "hometown > name",
                         "FacebookOptions": "String",
+                        "FacebookFrequency": "On change",
                         "FacebookInfo": "The hometown of the user"
                     }
                 ]
@@ -85,24 +101,28 @@
                 "dataname": "Connections",
                 "FacebookName": "friends > [{name}]",
                 "FacebookOptions": "Array with any amount of json with strings",
+                "FacebookFrequency": "On change",
                 "FacebookInfo": "The friends of the user",
                 "GoogleName": "",
                 "GoogleOptions": "",
                 "GoogleInfo": "",
                 "InstagramName": "followers and following",
                 "InstagramOptions": "Names of the other users: datetime",
+                "InstagramFrequency": "On change",
                 "InstagramInfo": "The followers and following of user"
             },
             {
                 "dataname": "Photos",
                 "FacebookName": "photos > [{uri}]",
                 "FacebookOptions": "Array with any amount of json with strings",
+                "FacebookFrequency": "Daily",
                 "FacebookInfo": "The photos of the user",
                 "GoogleName": "",
                 "GoogleOptions": "",
                 "GoogleInfo": "",
                 "InstagramName": "photos > [{caption, taken_at, path}]",
                 "InstagramOptions": "Array with any amount of json with strings",
+                "InstagramFrequency": "Hourly",
                 "InstagramInfo": "Photos posted by user"
             },
             {
@@ -112,6 +132,7 @@
                         "dataname": "CommentsSend",
                         "FacebookName": "[{data > [{post}]}, title]",
                         "FacebookOptions": "",
+                        "FacebookFrequency": "Daily",
                         "FacebookInfo": "Posts put on timeline",
                         "GoogleName": "",
                         "GoogleOptions": "",
@@ -124,12 +145,14 @@
                         "dataname": "CommentsReceived",
                         "FacebookName": "wall_posts_sent_to_you > activity_log_data > [{data > [{post}]}, title]",
                         "FacebookOptions": "",
+                        "FacebookFrequency": "Hourly",
                         "FacebookInfo": "Posts from other users put on timeline of user",
                         "GoogleName": "",
                         "GoogleOptions": "",
                         "GoogleInfo": "",
                         "InstagramName": "media_comments",
                         "InstagramOptions": "[datetime, String comment, String page name]",
+                        "InstagramFrequency": "Hourly",
                         "InstagramInfo": "Comments posted on posts"
                     }
                 ]

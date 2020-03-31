@@ -221,21 +221,42 @@
             <%- include('../partials/header'); %>
         </header>
 
+        <div id="myNav" class="overlay">
 
-        <p class="button"><a href="data1">Companies</a> > <a class="clickable" onclick="location.href='data2'+ window.location.search.split('&options=')[0]">Subjects</a> > Data</p>
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Facebook</h2>
+                        <img src="images/fbdata.jpeg" alt="" class="img1">
+                    </div>
+                    <div class="col-sm-5">
+                        <h2>Instagram</h2>
+                        <img src="images/instadata.jpeg" alt="" class="img2">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary large-button" onclick="closeNav()">Close</button>
+
+        </div>
+
+        <p class="button"><a href="data1">Companies</a> > <a class="clickable" onclick="location.href='data2'+ window.location.search.split('&options=')[0]">Subjects</a>
+            > Data</p>
         <div class="row datafilter">
             <div class="col-sm-3">
+                <button class="btn btn-primary button" onclick="location.href='data2'+ window.location.search.split('&options=')[0]">Back</button>
+                <p></p>
                 <button class="btn btn-primary button" onclick="copyURL()">Share data</button>
             </div>
             <div class="col-sm-3">
-                <label class="filtercontainer">Only differences
-                    <input type="checkbox">
+                <label class="filtercontainer" onclick="uncheck('similarities')">Only differences
+                    <input type="checkbox" id="differences">
                     <span class="checkmark"></span>
                 </label>
             </div>
             <div class="col-sm-3">
-                <label class="filtercontainer">Only similarities
-                    <input type="checkbox">
+                <label class="filtercontainer" onclick="uncheck('differences')">Only similarities
+                    <input type="checkbox" id="similarities">
                     <span class="checkmark"></span>
                 </label>
             </div>

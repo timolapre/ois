@@ -624,7 +624,7 @@
 				if (_this.treeid == 1) {
 					var infoOptions = ["Options"];
 				} else {
-					var infoOptions = ["Name", "Options", "Info"];
+					var infoOptions = ["Name", "Options", "Frequency" , "Info"];
 				}
 
 				//var dataname = '<div class="nodetitle">'+ node.dataname + '</div>'
@@ -633,7 +633,10 @@
 				var text = '';
 
 				if (!node.nodes) {
-					text += '<div class="glyphicon glyphicon-star-empty star" style="float:right" onclick="toggleStar(this.id)" id="star'+_this.treeid + node.dataname + id +'"></div>'
+					text += '<div class="glyphicon glyphicon-star-empty star" style="float:right" onclick="toggleStar(this.id)" id="star' + _this.treeid + node.dataname + id + '"></div>'
+					if (_this.treeid == 2) {
+						text += '<br><br><button class="btn btn-primary" onclick="openNav()">See source</button>';
+					}
 				}
 
 				text += '<div class="row tabledata">' +

@@ -268,7 +268,7 @@ function checkParents(id) {
     }
 }
 
-var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"]];
+var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "Gender", "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"]];
 $(document).ready(function () {
     addOptions(optionsarray, 'optionslist');
 });
