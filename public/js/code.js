@@ -25,7 +25,7 @@ function copyURL() {
     dummy.select();
     document.execCommand('copy');
     document.body.removeChild(dummy);
-    alert("Copied the url. share with anyone");
+    alert("Copied the URL to clipboard. You can now share the link with anyone you want.");
 }
 
 /* Open when someone clicks on the span element */
