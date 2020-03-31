@@ -315,7 +315,7 @@ body{
   .overlay-content {
     background-color: #ccc;
     position: relative;
-    top: 25%; /* 25% from the top */
+    top: 15%; /* 25% from the top */
     width: 1300px; /* 100% width */
     text-align: center; /* Centered text/links */
     margin: auto; /* 30px top margin to avoid conflict with the close button on smaller screens */
@@ -342,7 +342,7 @@ body{
     left: 47%;
     text-align: center; /* Centered text/links */
     margin: auto; /* 30px top margin to avoid conflict with the close button on smaller screens */
-    margin-top: 200px;
+    margin-top: 150px;
     font-size: 30px;
   }
   
