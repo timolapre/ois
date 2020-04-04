@@ -8,7 +8,7 @@
     <script src="/js/indexCode.js"></script>
 </head>
 
-<body class="container" onload="getCompanies()">
+<body class="container" onload="getCompanies();addChosenCompanies();checkSavedBoxes();checkIfOptionsSelected();">
 
     <header>
         <%- include('../partials/header'); %>
@@ -17,7 +17,8 @@
     <main>
         <div class="jumbotron">
             <p class="button"><a href="data1">Companies</a> > <b>Subjects</b></p>
-            <br><br>    
+            <p style="float:right" id="chosencompanies"></p>
+            <br><br>
             <button class="btn btn-primary button" onclick="location.href='data1'">Back</button>
             <h1>Data subjects</h1>
             <p>Select all subjects you are interested in (At least 1)</p>
@@ -79,7 +80,7 @@
                             </p>
                         </label>
                     </div>
-                </div>
+                </div>  
 
                 <div class="col-sm-12 checkboxes" id="optionslist">
 
@@ -132,7 +133,7 @@
 
             <div class="row">
                 <div class="col-sm comparebtn">
-                    <button class="btn btn-primary" id="continuebutton" onClick="goToComparePage()" disabled>Continue</button>
+                    <button class="btn btn-primary" id="continuebutton" onClick="goToComparePage()">Continue</button>
                 </div>
             </div>
         </div>

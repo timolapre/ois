@@ -12,7 +12,10 @@
 
         <% if (loggedin == 1) { %>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="data3?companies=Facebook,Google&options=General,Content,Languages,Formats,Quality,Profile,Name,FirstName,LastName,FullName,Comments,CommentsSend,CommentsReceived"><span class=""></span>See bookmarked</a></li>
+            <li><p style="margin: 15px 80px 0 0">Logged in as: Laura</p></li>
+            <li><a href="data3?companies=Facebook,Google&options=General,Content,Languages,Formats,Quality,Profile,Name,FirstName,LastName,FullName,Comments,CommentsSend,CommentsReceived"><span
+                        class=""></span>See bookmarked</a></li>
+            <li>
             <li>
                 <form action="/logout" method="POST">
                     <button type="text" class="btn btn-link" id="logoutbutton">Logout</button>
@@ -21,7 +24,7 @@
         </ul>
         <%} else { %>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/register" style="color:#337AB7;font-weight:bold" class="blue"><span class="blue"></span>Register</a></li>
+            <li><a href="/register" style="color:#337AB7;font-weight:bold" class="blue registerbutton" onmouseover="this.style.color='rgb(39, 93, 141)'" onmouseout="this.style.color='#337AB7'"><span></span>Register</a></li>
             <li><a href="/login"><span class=""></span>Login</a></li>
         </ul>
         <% } %>

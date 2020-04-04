@@ -6,6 +6,10 @@ body{
     cursor: pointer;
 }
 
+.star{
+    cursor: pointer;
+}
+
 #registered{
     margin-top: 30px;
     font-size: 20px;
@@ -262,6 +266,15 @@ body{
     cursor: pointer;
   }
 
+  .json{
+    text-align: left; 
+    margin-top: 70px;
+    margin-bottom:40px;
+    background-color: #eee;
+    border: black solid 1px;
+  }
+
+
 
 
 
@@ -313,7 +326,7 @@ body{
   
   /* Position the content inside the overlay */
   .overlay-content {
-    background-color: #ccc;
+    background-color: #fff;
     position: relative;
     top: 15%; /* 25% from the top */
     width: 1300px; /* 100% width */

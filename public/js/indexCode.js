@@ -12,6 +12,8 @@ function goToOptionsPage() {
 
 function goToComparePage() {
     var checkboxes = document.getElementsByClassName("checkbox");
+    var checkboxgeneral = document.getElementsByClassName('checkboxgeneral');
+    var checkboxcontent = document.getElementsByClassName('checkboxcontent');
     var options = ""
     for (i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
@@ -19,7 +21,20 @@ function goToComparePage() {
         }
     }
     options = options.substring(0, options.length - 1);
-    location.href = 'data3' + window.location.search + '&options=General,Content,' + options;
+    var tree = '';
+    for (var i = 0; i < checkboxgeneral.length; i++) {
+        if (checkboxgeneral[i].checked) {
+            tree += "General,";
+            break;
+        }
+    }
+    for (var i = 0; i < checkboxcontent.length; i++) {
+        if (checkboxcontent[i].checked) {
+            tree += "Content,";
+            break;
+        }
+    }
+    location.href = 'data3' + window.location.search.split('&options=')[0] + '&options=' + tree + options;
 }
 
 function getCompanies() {
@@ -32,8 +47,11 @@ function getCompanies() {
 function getOptions() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const options = urlParams.get('options').split(",");
-    return options;
+    if (urlParams.get('options')) {
+        const options = urlParams.get('options').split(",");
+        return options;
+    }
+    return [];
 }
 
 function removeCompany(company) {
@@ -94,15 +112,23 @@ function setCompanyNames() {
 
         select = document.createElement('select');
         select.className = "dropdown companyselect";
+        select.onchange = function () { companyChange(); };
 
         var allcompanies = ["Facebook", "Google", "Instagram"];
+        loop1:
         for (var j = 0; j < allcompanies.length; j++) {
             var option = document.createElement('option');
             if (companies[i] == allcompanies[j]) {
                 option.selected = true;
             }
+            loop2:
+            for (var x = 0; x < companies.length; x++) {
+                if (option.selected == false && allcompanies[j] == companies[x]) {
+                    continue loop1;
+                }
+            }
             option.className = "dropdown-item";
-            option.value = j;
+            option.value = allcompanies[j];
             var text = document.createTextNode(allcompanies[j]);
             option.appendChild(text);
             select.appendChild(option);
@@ -117,17 +143,19 @@ function setCompanyNames() {
         h2.appendChild(text);
         //div.appendChild(h2);
 
-        btn = document.createElement('button');
-        btn.className = 'btn btn-primary addbutton';
-        btn.id = companies[i];
-        btn.addEventListener("click", function () {
-            removeCompany(this.id);
-        }, false);
-        p = document.createElement('p');
-        text = document.createTextNode('-');
-        p.appendChild(text);
-        btn.appendChild(p);
-        div.appendChild(btn);
+        if (companies.length > 1) {
+            btn = document.createElement('button');
+            btn.className = 'btn btn-primary addbutton';
+            btn.id = companies[i];
+            btn.addEventListener("click", function () {
+                removeCompany(this.id);
+            }, false);
+            p = document.createElement('p');
+            text = document.createTextNode('-');
+            p.appendChild(text);
+            btn.appendChild(p);
+            div.appendChild(btn);
+        }
 
         companynames.appendChild(div);
     }
@@ -144,6 +172,16 @@ function setCompanyNames() {
         btn.appendChild(p);
         companynames.appendChild(btn);
     }
+}
+
+function companyChange() {
+    var companyvalues = [];
+    var companies = document.getElementsByClassName('companyselect');
+    for (var i = 0; i < companies.length; i++) {
+        companyvalues.push(companies[i].value);
+    }
+    window.location.href = "http://localhost:3000/data3?companies=" + companyvalues + "&options=" + getOptions();
+    console.log(companyvalues);
 }
 
 function getColsm() {
@@ -311,4 +349,61 @@ function addOptions(array, id) {
             </label>
         </div>
     */
+}
+
+function addChosenCompanies() {
+    var chosencompanies = document.getElementById('chosencompanies');
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var companies = url.searchParams.get("companies").split(',');
+    var x = 'Chosen companies: ';
+    for (var i = 0; i < companies.length - 1; i++) {
+        x += companies[i] + ", ";
+    }
+    x += companies[companies.length - 1];
+    chosencompanies.innerHTML = x;
+}
+
+function setJSONdata() {
+    var data = {
+        "comments": [
+            {
+                "timestamp": 1584235162,
+                "data": [
+                    {
+                        "comment": {
+                            "timestamp": 1584235162,
+                            "comment": "Test",
+                            "author": "Timo Lapre"
+                        }
+                    }
+                ],
+                "title": "Timo Lapre commented on the message of Reinhard."
+            }
+        ]
+    };
+
+    document.getElementById("fbjson").textContent = JSON.stringify(data, undefined, 2);
+
+    var data = {
+        "media_comments": [
+            [
+                "2020-03;07T09:42:19+00:00",
+                "Zin in!",
+                "barztumpertz"
+            ]
+        ]
+    };
+
+    document.getElementById("instajson").textContent = JSON.stringify(data, undefined, 2);
+}
+
+function checkSavedBoxes() {
+    var options = getOptions();
+    for (var i = 0; i < options.length; i++) {
+        if (options[i] == "General" || options[i] == "Content") {
+            continue;
+        }
+        $("#" + options[i]).children('input').prop("checked", true);
+    }
 }

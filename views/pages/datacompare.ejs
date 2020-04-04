@@ -214,7 +214,7 @@
 
 </head>
 
-<body data-gr-c-s-loaded="true" onload="getCompanies();getOptions();setCompanyNames()">
+<body data-gr-c-s-loaded="true" onload="getCompanies();getOptions();setCompanyNames();setJSONdata();">
     <div class="container">
 
         <header>
@@ -226,25 +226,27 @@
             <!-- Overlay content -->
             <div class="overlay-content">
                 <div class="row">
+                    <div class="col-sm-1"></div>
                     <div class="col-sm-5">
                         <h2>Facebook</h2>
-                        <img src="images/fbdata.jpeg" alt="" class="img1">
+                        <pre class="json" id="fbjson"></pre>
                     </div>
                     <div class="col-sm-5">
                         <h2>Instagram</h2>
-                        <img src="images/instadata.jpeg" alt="" class="img2">
+                        <pre class="json" id="instajson"></pre>
                     </div>
+                    <div class="col-sm-1"></div>
                 </div>
             </div>
             <button class="btn btn-primary large-button" onclick="closeNav()">Close</button>
 
         </div>
 
-        <p class="button"><a href="data1">Companies</a> > <a class="clickable" onclick="location.href='data2'+ window.location.search.split('&options=')[0]">Subjects</a>
+        <p class="button"><a href="data1">Companies</a> > <a class="clickable" onclick="location.href='data2'+ window.location.search">Subjects</a>
             > <b>Data</b></p>
         <div class="row datafilter">
             <div class="col-sm-3">
-                <button class="btn btn-primary button" onclick="location.href='data2'+ window.location.search.split('&options=')[0]">Back</button>
+                <button class="btn btn-primary button" onclick="location.href='data2'+ window.location.search">Back</button>
                 <p></p>
                 <button class="btn btn-primary button" onclick="copyURL()">Share data</button>
             </div>
