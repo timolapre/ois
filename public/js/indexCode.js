@@ -309,13 +309,17 @@ function checkParents(id) {
 var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "Gender", "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"]];
 var sharearray = [["Profile", ["Name", "FullName"], "Gender"], "Photos"];
 $(document).ready(function () {
-    addOptions(optionsarray, 'optionslist');
-    addOptions(sharearray, 'optionslistshare');
+    console.log($("#optionslistshare"));
+    if ($("#optionslistshare").length) {
+        addOptions(sharearray, 'optionslistshare');
+    }
+    if ($("#optionslist").length) {
+        addOptions(optionsarray, 'optionslist');
+    }
 });
 
 function addOptions(array, id) {
     var addto = $("#" + id);
-
 
     for (var i = 0; i < array.length; i++) {
         if (array[i] instanceof Array) {
