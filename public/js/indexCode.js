@@ -307,8 +307,10 @@ function checkParents(id) {
 }
 
 var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "Gender", "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"]];
+var sharearray = [["Profile", ["Name", "FullName"], "Gender"], "Photos"];
 $(document).ready(function () {
     addOptions(optionsarray, 'optionslist');
+    addOptions(sharearray, 'optionslistshare');
 });
 
 function addOptions(array, id) {
@@ -336,19 +338,6 @@ function addOptions(array, id) {
             addto.append(div);
         }
     }
-
-    /*
-        <div>
-            <label class="filtercontainer">
-                <input type="checkbox" class="checkbox checkboxcontent" id="<%= optionsContent[i] %>"
-                    onclick="checkIfOptionsSelected()">
-                <span class="checkmark"></span>
-                <p>
-                    <%= optionsContent[i] %>
-                </p>
-            </label>
-        </div>
-    */
 }
 
 function addChosenCompanies() {

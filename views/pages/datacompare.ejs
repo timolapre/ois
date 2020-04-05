@@ -222,8 +222,6 @@
         </header>
 
         <div id="myNav" class="overlay">
-
-            <!-- Overlay content -->
             <div class="overlay-content">
                 <div class="row">
                     <div class="col-sm-1"></div>
@@ -238,8 +236,35 @@
                     <div class="col-sm-1"></div>
                 </div>
             </div>
-            <button class="btn btn-primary large-button" onclick="closeNav()">Close</button>
+            <button class="btn btn-primary large-button" onclick="closeNav('myNav')">Close</button>
+        </div>
 
+        <div id="myNavShare" class="overlay">
+            <div class="overlay-content2">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <h2 style="margin: 30px 0 30px 0">What data do you want to share?</h2>
+                        <div class="checkboxes">
+                            <div>
+                                <label class="filtercontainer" onclick="selectAllContent();checkIfOptionsSelected()">
+                                    <input type="checkbox" class="" id="checkboxcontentall">
+                                    <span class="checkmark"></span>
+                                    <p>
+                                        Select all
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="checkboxes" id="optionslistshare">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+            <button class="btn btn-primary large-button sharebutton" onclick="copyURL()">Share</button>
+            <button class="btn btn-primary large-button sharebutton" onclick="closeNav('myNavShare')">Close</button>
         </div>
 
         <p class="button"><a href="data1">Companies</a> > <a class="clickable" onclick="location.href='data2'+ window.location.search">Subjects</a>
@@ -248,7 +273,7 @@
             <div class="col-sm-3">
                 <button class="btn btn-primary button" onclick="location.href='data2'+ window.location.search">Back</button>
                 <p></p>
-                <button class="btn btn-primary button" onclick="copyURL()">Share data</button>
+                <button class="btn btn-primary button" onclick="openNav('myNavShare')">Share data</button>
             </div>
             <div class="col-sm-3">
                 <label class="filtercontainer" onclick="uncheck('similarities')">Only differences

@@ -50,6 +50,14 @@ app.get('/data3', function (req, res) {
     res.render('pages/datacompare', { loggedin });
 });
 
+app.get('/share', function (req, res) {
+    var loggedin = 0;
+    if (req.session.loggedin) {
+        loggedin = req.session.loggedin;
+    }
+    res.render('pages/shareoptions', { optionsGeneral, optionsContent, marginBottom, loggedin });
+});
+
 app.get('/about', function (req, res) {
     var loggedin = 0;
     if (req.session.loggedin) {
