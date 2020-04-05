@@ -245,6 +245,14 @@ body{
     margin-left: 0px;
 }
 
+#companynames{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    padding: 10px 0 5px 0;
+}
+
 #companynames h2{
     display: inline;
 }
@@ -273,7 +281,6 @@ body{
     background-color: #eee;
     border: black solid 1px;
   }
-
 
 
 
