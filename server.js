@@ -6,7 +6,7 @@ var session = require('express-session');
 
 var companies = ["Facebook", "Google", "Instagram", "Linkedin", "Tiktok", "Snapchat"];
 var optionsGeneral = ["Languages", "Formats", "Quality"];
-var optionsContent = ["Profile", ["Gender", "Name", "First Name"], "Name", "First name", "Last name", "Full name", "E-mails", "Birthday", "Hometown", "Connections", "Photos", "Comments", "Comments send", "Comments received"];
+var optionsContent = ["Profile", ["Gender", "Name", "First Name"], "Name", "First name", "Last name", "Full name", "E-mails", "Birthday", "Hometown", "Connections", "Photos", "Comments", "Comments send", "Comments received", "Location"];
 var marginBottom = Math.ceil(optionsGeneral.length / 2) * 100 + 100 + "px";
 
 app.set('view engine', 'ejs');

@@ -157,6 +157,20 @@
                         "InstagramInfo": "Comments posted on posts"
                     }
                 ]
+            },
+            {
+                "dataname":"Location",
+                "FacebookName": "location",
+                "FacebookOptions": "",
+                "FacebookFrequency": "Every minute",
+                "FacebookInfo": "Location of user",
+                "GoogleName": "location",
+                "GoogleOptions": "",
+                "GoogleFrequency": "Every minute",
+                "GoogleInfo": "Location of user",
+                "InstagramName": "",
+                "InstagramOptions": "",
+                "InstagramInfo": ""
             }
         ]
     }

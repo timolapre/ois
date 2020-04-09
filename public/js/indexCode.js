@@ -306,7 +306,7 @@ function checkParents(id) {
     }
 }
 
-var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "Gender", "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"]];
+var optionsarray = [["Profile", ["Name", "FirstName", "LastName", "FullName"], "Gender", "E-mails", "Birthday", "Hometown"], "Connections", "Photos", ["Comments", "CommentsSend", "CommentsReceived"], "Location"];
 var sharearray = [["Profile", ["Name", "FullName"], "Gender"], "Photos"];
 $(document).ready(function () {
     console.log($("#optionslistshare"));
